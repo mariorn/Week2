@@ -1,0 +1,37 @@
+
+<!doctype html>
+<html>
+<head>
+  <title>| TodoList |</title>
+</head>
+<body>
+
+Welcome to the TodoList
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li> 
+      <%= task.content %> 
+      <% if !task.complete? %>
+        <a href=<%= "/complete/#{task.id}" %> name='operation' value='complete_task'>Complete</a>
+      <% end %>
+      <a href=<%= "/delete/#{task.id}" %> name='operation' value='delete_task'>Delete</a>
+    </li>
+
+  <% end %>
+</ul>
+
+<a href='/new_task' name='operation' value='add_task' style="
+    display: block;
+    width: 70px;
+    background: #4E9CAF;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+">Add Task</a>
+
+
+</body>
+</html>
