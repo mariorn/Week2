@@ -1,0 +1,44 @@
+
+<!doctype html>
+<html>
+  <head>
+   <title>| Movie Quiz |</title>
+  </head>
+  <body>
+
+  <div style="margin-left:450px">
+    <h1> Movie Quizz </h1>
+  </div>
+  <div style="margin-left:200px">
+    <h1> <%= @question %> </h1>
+    <a href='/new_question' name='operation' value='new_question' 
+       style=" margin: 20px; display: block; width: 70px;
+               background: #4E9CAF; padding: 10px 20px;
+               text-align: center; border-radius: 5px;
+               color: white; font-weight: bold; margin-left: 290px">
+      Other Question
+    </a>
+
+  </div>
+    
+  <% cont = 1 %>
+  <div style="margin-left:300px; float:left; width: 500px">
+
+  <% @movies.each do |movie| %>
+
+    <% if "#{cont}" == @random_number.to_s %>
+      <input type="image" src= <%= "#{movie.poster}" %> width="160" height="200" onClick="alert('CORRECT!!')" >
+    <% else %>
+      <input type="image" src= <%= "#{movie.poster}" %> width="160" height="200" onClick="alert('INCORRECT')" >
+    <% end %>
+
+  <% cont += 1 %>
+  <% end %>
+  </div>
+
+
+
+  </body>
+
+</html>
+
