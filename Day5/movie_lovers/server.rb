@@ -2,7 +2,6 @@ require 'sinatra'
 require 'sinatra/reloader'
 require './lib/movie.rb'
 require './lib/quiz.rb'
-require 'pry'
 
 
 use Rack::Session::Pool
